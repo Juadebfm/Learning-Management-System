@@ -1,7 +1,6 @@
 const cloudinary = require("cloudinary").v2;
 
-// configure with env
-
+//configure with env data
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -17,7 +16,7 @@ const uploadMediaToCloudinary = async (filePath) => {
     return result;
   } catch (error) {
     console.log(error);
-    throw new Error("Error Uploading To Cloudinary");
+    throw new Error("Error uploading to cloudinary");
   }
 };
 
@@ -26,8 +25,8 @@ const deleteMediaFromCloudinary = async (publicId) => {
     await cloudinary.uploader.destroy(publicId);
   } catch (error) {
     console.log(error);
-    throw new Error("Error Delete Asset(s) From Cloudinary");
+    throw new Error("failed to delete assest from cloudinary");
   }
 };
 
-module.exports = (uploadMediaToCloudinary, deleteMediaFromCloudinary);
+module.exports = { uploadMediaToCloudinary, deleteMediaFromCloudinary };
