@@ -23,8 +23,8 @@ export default function InstructorProvider({ children }) {
     <InstructorContext.Provider
       value={{
         courseLandingFormData,
-        setCourseLandingFormData,
         courseCurriculumFormData,
+        setCourseLandingFormData,
         setCourseCurriculumFormData,
         mediaUploadProgress,
         setMediaUploadProgress,
