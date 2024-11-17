@@ -7,6 +7,8 @@ import InstructorDashboardpage from "./pages/instructor";
 
 import NotFoundPage from "./pages/not-found";
 import AddNewCoursePage from "./pages/instructor/add-new-course";
+import StudentViewCommonLayout from "./components/student-view/common-layout";
+import StudentHomePage from "./pages/student/home";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -53,7 +55,7 @@ function App() {
           />
         }
       />
-      {/* <Route
+      <Route
         path="/"
         element={
           <RouteGuard
@@ -65,7 +67,7 @@ function App() {
       >
         <Route path="" element={<StudentHomePage />} />
         <Route path="home" element={<StudentHomePage />} />
-        <Route path="courses" element={<StudentViewCoursesPage />} />
+        {/* <Route path="courses" element={<StudentViewCoursesPage />} />
         <Route
           path="course/details/:id"
           element={<StudentViewCourseDetailsPage />}
@@ -75,8 +77,8 @@ function App() {
         <Route
           path="course-progress/:id"
           element={<StudentViewCourseProgressPage />}
-        />
-      </Route> */}
+        /> */}
+      </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
