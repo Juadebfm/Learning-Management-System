@@ -49,7 +49,7 @@ const loginUser = async (req, res) => {
       role: checkUser.role,
     },
     "JWT_SECRET",
-    { expiresIn: "120m" }
+    { expiresIn: "1d" }
   );
 
   res.status(200).json({
@@ -66,6 +66,5 @@ const loginUser = async (req, res) => {
     },
   });
 };
-
 
 module.exports = { registerUser, loginUser };

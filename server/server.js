@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth-routes/index");
 const mediaRoutes = require("./routes/instructor-routes/media-routes");
 const instructorCourseRoutes = require("./routes/instructor-routes/course-routes");
+const studentViewCourseRoutes = require("./routes/student-routes/course-routes");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/media", mediaRoutes);
 app.use("/instructor/course", instructorCourseRoutes);
+app.use("/student/course", studentViewCourseRoutes);
 
 // Database connection
 mongoose
